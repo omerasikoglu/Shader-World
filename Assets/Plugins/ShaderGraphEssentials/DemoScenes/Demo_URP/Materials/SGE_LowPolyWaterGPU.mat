@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SGE_LowPolyWaterGPU
-  m_Shader: {fileID: -6465566751694194690, guid: cdc4a104821b57f4cb57baa59f2ca3a0,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: cdc4a104821b57f4cb57baa59f2ca3a0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -73,6 +72,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_139C518: 0.1
     - Vector1_22EE8530: 0.001
@@ -106,7 +117,7 @@ Material:
     - Vector1_BD5970D9: 0
     - Vector1_C0E6CFFA: 10
     - Vector1_C8B5CBB3: 1
-    - Vector1_D940D78A: 0.02
+    - Vector1_D940D78A: 0
     - Vector1_DCA02D6D: 0.002
     - Vector1_DD695999: 0.01
     - Vector1_DDD6FA2F: 1
@@ -135,7 +146,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_17A46B7: {r: 0.5014643, g: 0.739, b: 0.6301295, a: 0}
-    - Color_1DC1406B: {r: 0.15686275, g: 0.42352945, b: 0.5803922, a: 0}
+    - Color_1DC1406B: {r: 0.5803922, g: 0.15686272, b: 0.5374655, a: 0}
     - Color_8734E84C: {r: 0, g: 0.9308512, b: 1, a: 0}
     - Color_A4720C91: {r: 0.14849585, g: 0.20075795, b: 0.44339618, a: 0}
     - Color_A5022869: {r: 0.5764706, g: 0.5764706, b: 0.5764706, a: 1}
@@ -151,3 +162,4 @@ Material:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
