@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SceneManagement
+namespace Sample_SceneManagement
 {
     public static class Loader
     {
