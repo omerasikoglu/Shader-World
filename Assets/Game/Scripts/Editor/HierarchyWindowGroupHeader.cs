@@ -6,7 +6,7 @@ using UnityEngine;
 /// Author: https://github.com/omerasikoglu
 /// Thanks for concept of idea : http://diegogiacomelli.com.br/unitytips-hierarchy-window-group-header
 /// And special thanks for social media post: github.com/farukcan
-/// Samples: "#9856CC HEADER" , "#magenta header2" , "# HEADER3", #9856cc header5 "#yElLoW hEaDeR4,"
+/// Samples: "#9856CC HEADER1" , "#magenta header2" , "# HEADER3"
 /// </summary>
 [InitializeOnLoad]
 public static class HierarchyWindowGroupHeader
@@ -20,12 +20,14 @@ public static class HierarchyWindowGroupHeader
     {
         var gameObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
-        if (gameObject != null && gameObject.name.StartsWith("#", System.StringComparison.Ordinal))
+        if (gameObject == null) return;
+
+        if (gameObject.name.StartsWith("#", System.StringComparison.Ordinal))
         {
             // format is #color and #FF0012
             string colorName = gameObject.name.Substring(1).Split(' ')[0];
 
-            // convert colorname to unity color
+            // convert to color
             Color color = IsHexCode() ? GetColorFromString(colorName) :
                 (ColorUtility.TryParseHtmlString(colorName.ToLower(), out var _color) ? _color : Color.black);
 
@@ -34,9 +36,9 @@ public static class HierarchyWindowGroupHeader
 
             bool IsHexCode()
             {
-                if (colorName.Length == 0) return false;
-                //check digit or hex letters
-                for (int i = 0; i < colorName.Length; i++)
+                if (colorName.Length < 6) return false;
+
+                for (int i = 0; i < 6; i++)
                 {
                     if (!char.IsDigit(colorName, i))
                     {
