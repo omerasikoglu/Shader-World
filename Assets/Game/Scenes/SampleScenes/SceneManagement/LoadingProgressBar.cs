@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sample_SceneManagement
+namespace Codemonkey_SceneManagement
 {
     public class LoadingProgressBar : MonoBehaviour
     {

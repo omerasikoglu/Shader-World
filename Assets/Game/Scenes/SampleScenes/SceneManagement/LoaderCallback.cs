@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sample_SceneManagement
+namespace Codemonkey_SceneManagement
 {
     public class LoaderCallback : MonoBehaviour
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Sample_SceneManagement
+namespace Codemonkey_SceneManagement
 {
     public static class Loader
     {
@@ -48,14 +48,7 @@ namespace Sample_SceneManagement
 
         public static float GetLoadingProgress()
         {
-            if (loadingAsyncOperation != null)
-            {
-                return loadingAsyncOperation.progress;
-            }
-            else
-            {
-                return 1f;
-            }
+            return loadingAsyncOperation?.progress ?? 1f;
         }
 
         public static void LoaderCallback()

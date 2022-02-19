@@ -1018,7 +1018,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "662d3b5fc9ff4c3e9ab52722913b64a5",
     "m_Id": 0,
-    "m_DisplayName": "Speed1",
+    "m_DisplayName": "Speed",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",

@@ -2,7 +2,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using DG.Tweening;
 
-namespace Sample_SceneManagement
+namespace Codemonkey_SceneManagement
 {
     public class MoveSquare : MonoBehaviour
     {

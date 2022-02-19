@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
-namespace Sample_SceneManagement
+namespace Codemonkey_SceneManagement
 {
     public class GameSceneUI : MonoBehaviour
     {

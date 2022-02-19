@@ -32,35 +32,35 @@ namespace CodeMonkey {
         }
 
         // Creates a World Text object at the world position
-        public static void Text(string text, Vector3 localPosition = default(Vector3), Transform parent = null, int fontSize = 40, Color? color = null, TextAnchor textAnchor = TextAnchor.UpperLeft, TextAlignment textAlignment = TextAlignment.Left, int sortingOrder = UtilsClass.sortingOrderDefault) {
-            UtilsClass.CreateWorldText(text, parent, localPosition, fontSize, color, textAnchor, textAlignment, sortingOrder);
+        public static void Text(string text, Vector3 localPosition = default(Vector3), Transform parent = null, int fontSize = 40, Color? color = null, TextAnchor textAnchor = TextAnchor.UpperLeft, TextAlignment textAlignment = TextAlignment.Left, int sortingOrder = Utils.UtilsClass.sortingOrderDefault) {
+            Utils.UtilsClass.CreateWorldText(text, parent, localPosition, fontSize, color, textAnchor, textAlignment, sortingOrder);
         }
         
         // World text pop up at mouse position
         public static void TextPopupMouse(string text) {
-            UtilsClass.CreateWorldTextPopup(text, UtilsClass.GetMouseWorldPosition());
+            Utils.UtilsClass.CreateWorldTextPopup(text, Utils.UtilsClass.GetMouseWorldPosition());
         }
 
         // Creates a Text pop up at the world position
         public static void TextPopup(string text, Vector3 position) {
-            UtilsClass.CreateWorldTextPopup(text, position);
+            Utils.UtilsClass.CreateWorldTextPopup(text, position);
         }
 
         // Text Updater in World, (parent == null) = world position
         public static FunctionUpdater TextUpdater(Func<string> GetTextFunc, Vector3 localPosition, Transform parent = null) {
-            return UtilsClass.CreateWorldTextUpdater(GetTextFunc, localPosition, parent);
+            return Utils.UtilsClass.CreateWorldTextUpdater(GetTextFunc, localPosition, parent);
         }
 
         // Text Updater in UI
         public static FunctionUpdater TextUpdaterUI(Func<string> GetTextFunc, Vector2 anchoredPosition) {
-            return UtilsClass.CreateUITextUpdater(GetTextFunc, anchoredPosition);
+            return Utils.UtilsClass.CreateUITextUpdater(GetTextFunc, anchoredPosition);
         }
 
         // Text Updater always following mouse
         public static void MouseTextUpdater(Func<string> GetTextFunc, Vector3 positionOffset = default(Vector3)) {
             GameObject gameObject = new GameObject();
             FunctionUpdater.Create(() => {
-                gameObject.transform.position = UtilsClass.GetMouseWorldPosition() + positionOffset;
+                gameObject.transform.position = Utils.UtilsClass.GetMouseWorldPosition() + positionOffset;
                 return false;
             });
             TextUpdater(GetTextFunc, Vector3.zero, gameObject.transform);
@@ -68,7 +68,7 @@ namespace CodeMonkey {
 
         // Trigger Action on Key
         public static FunctionUpdater KeyCodeAction(KeyCode keyCode, Action onKeyDown) {
-            return UtilsClass.CreateKeyCodeAction(keyCode, onKeyDown);
+            return Utils.UtilsClass.CreateKeyCodeAction(keyCode, onKeyDown);
         }
         
 

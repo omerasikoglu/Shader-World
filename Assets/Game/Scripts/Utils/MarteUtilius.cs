@@ -5,7 +5,7 @@ using System.Collections;
 /// <summary>
 /// My Library
 /// </summary>
-public static class MarteUtilsClass
+public static class MarteUtilius
 {
     private static Camera mainCamera;
 
