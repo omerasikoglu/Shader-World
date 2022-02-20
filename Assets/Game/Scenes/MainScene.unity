@@ -1067,6 +1067,8 @@ GameObject:
   - component: {fileID: 2115009107}
   - component: {fileID: 2115009108}
   - component: {fileID: 2115009109}
+  - component: {fileID: 2115009110}
+  - component: {fileID: 2115009111}
   m_Layer: 0
   m_Name: BF
   m_TagString: Untagged
@@ -1151,4 +1153,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14f26334b22c48479b4151e2e5f6eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pi: 0
+  moveMe: 0
+--- !u!114 &2115009110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115009106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c0b6e19a9332d489c897182d893b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDrag: 1
+  oneClickDrag: 0
+  thirdOne: 0
+  fourthOne: 0
+--- !u!65 &2115009111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115009106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

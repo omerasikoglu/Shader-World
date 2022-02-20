@@ -10,39 +10,34 @@ public static class MarteUtilius
     private static Camera mainCamera;
 
     #region Mouse or Object Position
-    public static Vector3 GetScreenToViewportPoint(Vector3? objectPosition = null, float posZ = 0f)
+    public static Vector3 GetScreenToViewportPoint(Vector3? objectPosition = null, float screenPosZ = 0f)
     {
         // sol-alt köşe 0.0f | sağ-üst 1.0f | kamera hareket etse de hep böyle
         mainCamera ??= Camera.main;
 
-        Vector3 position = objectPosition == null ?
-            mainCamera.ScreenToViewportPoint(Input.mousePosition) : mainCamera.ScreenToViewportPoint((Vector3)objectPosition);
+        if (objectPosition != null) return mainCamera.ScreenToViewportPoint((Vector3)objectPosition);
 
-        position.z = posZ;
-        return position;
+        Vector3 position = Input.mousePosition;
+        position.z = screenPosZ;
+        return mainCamera.ScreenToViewportPoint(position);
     }
-    public static Vector3 GetScreenToWorldPoint(Vector3? objectPosition = null, float posZ = 0f)
+    public static Vector3 GetScreenToWorldPoint(Vector3? objectPosition = null, float screenPosZ = 0f)
     {
         // sol-alt Dünyada neyse o -299 bile olabilir kamera konumu önemsiz. Dünyadaki 0,0,0 noktası origin olur
         mainCamera ??= Camera.main;
 
-        Vector3 position = objectPosition == null ?
-            mainCamera.ScreenToWorldPoint(Input.mousePosition) : mainCamera.ScreenToWorldPoint((Vector3)objectPosition);
+        if (objectPosition != null) return mainCamera.ScreenToWorldPoint((Vector3)objectPosition);
 
-        Debug.DrawRay(position, mainCamera.transform.forward * 1000, Color.red);
-        position.z = posZ;
-        return position;
+        Vector3 position = Input.mousePosition;
+        position.z = screenPosZ;
+        return mainCamera.ScreenToWorldPoint(position);
     }
-    public static Vector3 GetWorldToScreenPoint(Vector3? objectPosition = null, float posZ = 0f)
+    public static Vector3 GetWorldToScreenPoint(Vector3 objectPosition)
     {
         // aynı Vec3'ten döndürmez hiç.İlk girdiğinde kameranın sol altı 0,0 olur.70k'lara kadar çıkar ilerledikçe çok artar
         mainCamera ??= Camera.main;
 
-        Vector3 position = objectPosition == null ?
-            mainCamera.WorldToScreenPoint(Input.mousePosition) : mainCamera.WorldToScreenPoint((Vector3)objectPosition);
-
-        position.z = posZ;
-        return position;
+        return mainCamera.WorldToScreenPoint(objectPosition);
     }
     #endregion
 
@@ -67,7 +62,7 @@ public static class MarteUtilius
     //Random Directions
     public static Vector3 GetRandomDirection2D()
     {
-        // random x ve y değerleri, z=0f
+        // random x ve y değerleri, screenPosZ=0f
         return new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
     }
 
