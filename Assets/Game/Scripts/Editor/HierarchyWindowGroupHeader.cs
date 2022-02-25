@@ -16,7 +16,7 @@ public static class HierarchyWindowGroupHeader
         EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUI;
     }
 
-    static void HierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
+    private static void HierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
     {
         var gameObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
